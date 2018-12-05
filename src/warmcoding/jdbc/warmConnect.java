@@ -1,12 +1,15 @@
 package warmcoding.jdbc;
 
 import java.io.InputStream;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 public class warmConnect {
@@ -104,7 +107,7 @@ public class warmConnect {
 		}
 		return true;
 	}
-	
+		
 	public static void main(String[] args) throws Exception {
 		warmConnect connect = new warmConnect();
 		System.out.println(connect.getConnection());

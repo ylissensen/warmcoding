@@ -49,7 +49,7 @@ public class TuiLiu {
         /* streamid的生成。10.27*/
         
         this.bizid = "33772";   // bizid的获取  10.27
-        String streamid = bizid+"_"+this.liveHomeNumber;
+        streamid = bizid+"_"+this.liveHomeNumber;
        /* streamid的生成结束。10.27*/
 
        /* txSecret的生成 10.27*/

@@ -44,7 +44,7 @@ public class CurLiveDaoIml extends warmConnect implements CurLiveDao{
 	}
 
 	@Override
-	public List<current_live> serchAllCurLive() {
+	public List<current_live> searchAllCurLive() {
 		// TODO Auto-generated method stub
 		List<current_live> curlivelist = new ArrayList<current_live>();
 		try {
@@ -66,6 +66,10 @@ public class CurLiveDaoIml extends warmConnect implements CurLiveDao{
 			e.printStackTrace();
 		}finally{
 			this.closeResource();
+		}
+		for(int i = 0 ;i<curlivelist.size();i++)
+		{
+			System.out.print(curlivelist.get(i).getCurrentLiveHomeNumber()+"   ");
 		}
 		return  curlivelist;
 	}
@@ -122,10 +126,8 @@ public class CurLiveDaoIml extends warmConnect implements CurLiveDao{
 	
 	public static void main(String[] args) {
 		CurLiveDaoIml test = new CurLiveDaoIml();
-		List<current_live> testlist = test.serchAllCurLive();
-		for (current_live s : testlist){
-            System.out.println(s.getCurrentLiveClass()+s.getCurrentLiveRtmp()+s.getCurrentLiveTitle());
-        }
+		test.searchAllCurLive();
+		
 	}
 
 }

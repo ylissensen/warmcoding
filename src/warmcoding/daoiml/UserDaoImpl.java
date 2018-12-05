@@ -16,10 +16,8 @@ public class UserDaoImpl extends warmConnect implements UserDao{
 		try {
 			String sql = "INSERT INTO user(userName, userPassWord, userIdentificationCode) VALUES(?, ?, ?)";
 			Object[] params = {user.getUserName(), user.getUserPassWord(), user.getUserIdentificationCode()};
-			int i = this.executeUpdate(sql, params);
-			if (i > 0) {
-				System.out.println("ok");
-			}
+			this.executeUpdate(sql, params);
+			
 			flag = true;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -111,6 +109,29 @@ public class UserDaoImpl extends warmConnect implements UserDao{
 	  
 		return flag;
 	}
+
+	@Override
+	public int judgeUserIdent(String userName) {
+		// TODO Auto-generated method stub
+		String sql = "SELECT * FROM user WHERE userName = ?";
+		int userIden = 0;
+		Object[] params = {userName};
+		ResultSet rs = null;
+		warmConnect conn = new warmConnect();
+		try {
+			rs = conn.executeSQL(sql, params);
+			System.out.println("rs="+rs);
+			while (rs.next()) {
+			    userIden = rs.getInt("userIdentificationCode");
+			}
+		}catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} finally {
+			this.closeResource();
+		}
+		return userIden;
+	}
 	
 	public static void main(String[] args) {
 		UserDaoImpl test = new UserDaoImpl();
@@ -120,6 +141,7 @@ public class UserDaoImpl extends warmConnect implements UserDao{
 		System.out.println(ans);
 		
 	}
+
 	
 
 }

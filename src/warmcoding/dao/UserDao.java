@@ -7,5 +7,6 @@ public interface UserDao {
 	public boolean logIn(user user);
 	public boolean findUser(user user);
 	public boolean updateUserIndentificationCode(String userName);
+	public int judgeUserIdent(String userName);
 
 }

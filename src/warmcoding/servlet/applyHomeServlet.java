@@ -10,18 +10,27 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.apache.catalina.User;
 import org.json.JSONArray;
 
 import com.google.gson.Gson;
 
+import warmcoding.classes.user;
 import warmcoding.daoiml.ApplyHomeDaoIml;
 import warmcoding.daoiml.UserDaoImpl;
+import warmcoding.service.AllService;
 
 /**
  * Servlet implementation class applyHomeServlet
+ */
+/**
+ * 
+ * @author 彭依琳
+ *
  */
 @WebServlet("/applyHomeServlet")
 public class applyHomeServlet extends HttpServlet {
@@ -44,17 +53,21 @@ public class applyHomeServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("UTF-8");
 		
-//		String findCookies = "username";
-//		String userName = getCookies(request,response,findCookies);	
-		
-		String userName = "huangsen";
+	
+		 //获取session
+        HttpSession  session = request.getSession();
+        //从session中拿出username和pwd
+        String userName = (String)session.getAttribute("name");
 		System.out.println(userName);
 		
-		ApplyHomeDaoIml applyhomedaoimpl = new ApplyHomeDaoIml();
+		user suser = new user();
+		suser.setUserName(userName);
+		
+		AllService service = new AllService();
 		
 		JSONObject jo = new JSONObject();
 		try {
-			jo.put("homeNumber",applyhomedaoimpl.addHome(userName));
+			jo.put("homeNumber",service.applyHome(suser));
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
