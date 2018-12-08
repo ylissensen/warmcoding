@@ -36,7 +36,7 @@
 		    	   			type: 1,
 		    	   			title:false,
 		    	   			closeBtn: 0,
-		    	   			area: ['1000px', '1000px'],
+		    	   			area: ['500px', '200px'],
 		    	   			shadeClose: true, //点击遮罩关闭
 		    	   			content: '\<\div style="font-size:18px; padding:85px; background-color:#ebf6f7;">不好意思 申请直播失败了呢! 可能是网络问题哦~ \<\/div>'
 		    	   			});
@@ -49,8 +49,17 @@
 	    	   			closeBtn: 0,
 	    	   			area: ['500px', '250px'],
 	    	   			shadeClose: true, //点击遮罩关闭
-	    	   			content: '\<\div style="font-size:18px; padding:85px; background-color:#ebf6f7;">恭喜！你已经成为一名光荣的主播！<br/>'+sapply+'<br/><span style="padding:30px;"><button style="background-color:black; color: white; position: relative; top: 60px;">现在直播</button></span><span style="padding:10px;"><button style="background-color:black; color: white; position: relative; top: 60px; left:40px;">暂不直播</button></span>\<\/div>'
+	    	   			
+	                    btn:['现在直播','暂不直播'],
+	                    btn1:function(index,layero){
+	                    	window.location.href="${pageContext.request.contextPath }/JSP/applyLive.jsp";
+	                    },
+	                    btn2:function(index,layero){
+	                 
+	                    },
+	    	   			content: '\<\div style="font-size:18px; padding:85px; background-color:#ebf6f7;">恭喜！你已经成为一名光荣的主播！<br/>'+sapply+'<br/>\<\/div>'
 	    	   			});
+	    	    	    
 	    	       } 
 	    	    
 	    	    }, error: function (data) {

@@ -80,7 +80,7 @@
   		  url:"${pageContext.request.contextPath}/judgeUserServlet",
   		  dataType:"json",
   		  success:function(data){
-  			  if(data==0){
+  			  if(data.data==0){
   				  var html = "<p style='padding:40px;'>您还不是主播呢~<br/><a href='${pageContext.request.contextPath }/JSP/applyHome.jsp'>一键</a>开启你的直播间</p>";
   				  $("#homeinfor").html(html);
   			  }else{

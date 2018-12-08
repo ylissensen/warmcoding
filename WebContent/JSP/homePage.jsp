@@ -24,7 +24,22 @@
 
 <title>warmcoding-首页</title>
 <script type="text/javascript">
+var userid = '<%=session.getAttribute("name")%>';
 $(function test(){
+	if(userid != "null" ){
+		var tem = "<h3 style='padding:50px;'>欢迎您呀</h3>"+"<p style='padding:30px;'>"+userid+"</p>"+"<div style='padding:50px;'></div>";
+		tem+= "<a href='${pageContext.request.contextPath }/JSP/login.jsp' >如果需要切换账号,请点击</a>";
+		$("#logindiv").html(tem);
+	}else{
+		var tem = "<h3 style='padding:50px;'>加入我们</h3>";
+        tem+= "<span><button type='button' class='btn btn-default btn-lg' style='border:1px solid rgb(0, 195, 255); color:rgb(0, 195, 255)'>";
+        tem+= " <a href='${pageContext.request.contextPath }/JSP/login.jsp' >登录</a></button></span>";
+        tem+= " <span style='padding:50px;'>";
+        tem+= "<button type='button' class='btn btn-default btn-lg' style='border:1px solid rgb(0, 195, 255); color:rgb(0, 195, 255)' ><a href='${pageContext.request.contextPath }/JSP/register.jsp'>注册";
+        tem+= "</a></button></span>";
+		$("#logindiv").html(tem);
+		
+	}
     $.ajax({
           type:"GET",
           url:"${pageContext.request.contextPath}/getAllCurLiveServlet",
@@ -91,14 +106,7 @@ $(function test(){
                 </p>
                 <p style="padding:0px 120px 40px 100px; font-family: 黑体; font-size: 20px;">温暖每一个码农的心</p>
             </div>
-            <div class="col-md-5">
-                <h3 style="padding:50px;">加入我们</h3>
-                <span>
-                    <button type="button" class="btn btn-default btn-lg" style="border:1px solid rgb(0, 195, 255); color:rgb(0, 195, 255)" ><a href="${pageContext.request.contextPath }/JSP/login.jsp" >登录</a></button>
-                </span>
-                <span style="padding:50px;">
-                    <button type="button" class="btn btn-default btn-lg" style="border:1px solid rgb(0, 195, 255); color:rgb(0, 195, 255)" ><a href="${pageContext.request.contextPath }/JSP/register.jsp" >注册</a></button>
-                </span>
+            <div class="col-md-5" id="logindiv">
             </div>
         </div>
         <div>
