@@ -82,12 +82,15 @@ public class TuiLiu {
     }
 	
 	public String getRtmp() {
-		String PLAYURLR = "rtmp://"+this.bizid+".liveplay.myqcloud.com/live/"+this.streamid;
+		String PLAYURLR = "rtmp://"+this.bizid+".livepush.myqcloud.com/live/";
         return PLAYURLR;	
 	}
 	
+	public String getStreamId() {
+		return this.streamid;
+	}
 	public String getSecretKey() {
-		String SECRETKEY = "?bizid="+bizid+"&txSecret="+txSecret+"&txTime="+txTime;
+		String SECRETKEY = this.streamid+"?bizid="+bizid+"&txSecret="+txSecret+"&txTime="+txTime;
 		return SECRETKEY;
 	}
 	

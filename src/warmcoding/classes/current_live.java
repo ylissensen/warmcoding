@@ -6,17 +6,28 @@ public class current_live {
 	private String currentLiveSecretKey;
 	private String currentLiveClass;
 	private int currentLiveHomeNumber;
+	private String streamid;
 	
+
 	public current_live() {
 		super();
 	}
 	
-	public current_live(String title,String rtmp,String secret,String liveclass,int num) {
+	public current_live(String title,String rtmp,String secret,String liveclass,int num,String streamid) {
 		this.currentLiveClass=liveclass;
 		this.currentLiveHomeNumber=num;
 		this.currentLiveRtmp=rtmp;
 		this.currentLiveTitle=title;
 		this.currentLiveSecretKey=secret;
+		this.streamid = streamid;
+	}
+	
+	public String getStreamid() {
+		return streamid;
+	}
+
+	public void setStreamid(String streamid) {
+		this.streamid = streamid;
 	}
 	
 	public String getCurrentLiveTitle() {

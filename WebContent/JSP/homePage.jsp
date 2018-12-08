@@ -24,9 +24,35 @@
 
 <title>warmcoding-首页</title>
 <script type="text/javascript">
-var userid = '<%=session.getAttribute("name")%>';
+var userid = <%=session.getAttribute("name")%> ;
 $(function test(){
-	if(userid != "null" ){
+	$.ajax({
+        type:"GET",
+        url:"${pageContext.request.contextPath}/getAllCurLiveServlet",
+        cache: false,
+        dataType:"json",
+        success:function(json){
+       	   // alert("hhhhhhhhhhhh");
+       	    var tem = " ";
+       	    if(json.length > 3) json.length -= 3;
+       	 for(var i=0,l=json.length;i<l;i++){
+                 tem+="<div class='col-md-3'><figure>";
+                 tem+="<a href='${pageContext.request.contextPath}/showCurLiveServlet?homeid="+json[i].currentLiveHomeNumber+"'>";
+                 tem+=" <img src='${pageContext.request.contextPath}/CSS/images/"+(i%14+1)+".jpg' style='padding:10px' height='300px' width='250px'>";
+                 tem+="</a>"+"</figure>";
+                 tem+=" <p style='padding:20px;'> 标题:"+json[i].currentLiveTitle+"<br/>分类:"+json[i].currentLiveClass+"<br/>房间号:"+json[i].currentLiveHomeNumber+"<br/>";
+                 tem+="</p></div>";  
+       	      
+       	 }
+       	 $("#livediv").html(tem);
+        },error: function (XMLHttpRequest, textStatus, errorThrown) {  
+            alert(XMLHttpRequest.status);
+            alert(XMLHttpRequest.readyState);
+            alert(textStatus);
+         }
+ }); 
+    
+   /*  if(userid != "null" ){
 		var tem = "<h3 style='padding:50px;'>欢迎您呀</h3>"+"<p style='padding:30px;'>"+userid+"</p>"+"<div style='padding:50px;'></div>";
 		tem+= "<a href='${pageContext.request.contextPath }/JSP/login.jsp' >如果需要切换账号,请点击</a>";
 		$("#logindiv").html(tem);
@@ -39,31 +65,7 @@ $(function test(){
         tem+= "</a></button></span>";
 		$("#logindiv").html(tem);
 		
-	}
-    $.ajax({
-          type:"GET",
-          url:"${pageContext.request.contextPath}/getAllCurLiveServlet",
-          cache: false,
-          dataType:"json",
-          success:function(json){
-         	   // alert("hhhhhhhhhhhh");
-         	    var tem = " ";
-         	 for(var i=0,l=3;i<l;i++){
-                   tem+="<div class='col-md-3'><figure>";
-                   tem+="<a href='${pageContext.request.contextPath}/showCurLiveServlet?homeid="+json[i].currentLiveHomeNumber+"'>";
-                   tem+=" <img src='${pageContext.request.contextPath}/CSS/images/"+(i%14+1)+".jpg' style='padding:10px' height='300px' width='250px'>";
-                   tem+="</a>"+"</figure>";
-                   tem+=" <p style='padding:20px;'> 标题:"+json[i].currentLiveTitle+"<br/>分类:"+json[i].currentLiveClass+"<br/>房间号:"+json[i].currentLiveHomeNumber+"<br/>";
-                   tem+="</p></div>";  
-         	      
-         	 }
-         	 $("#livediv").html(tem);
-          },error: function (XMLHttpRequest, textStatus, errorThrown) {  
-              alert(XMLHttpRequest.status);
-              alert(XMLHttpRequest.readyState);
-              alert(textStatus);
-           }
-   }); 
+	} */
 });
 </script>
 </head>

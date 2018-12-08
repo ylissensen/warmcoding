@@ -72,20 +72,11 @@
 </div>
 <!-- </div> -->
 
-
-
-
-
-
-
-
-
-
 <script type="text/javascript">
 var option = {
-		   "live_url" : "rtmp://33772.liveplay.myqcloud.com/live/33772_100001",
-		   "live_url2" : "htmp://33772.liveplay.myqcloud.com/live/33772_100001.flv",
-		   "live_url3": "htmp://33772.liveplay.myqcloud.com/33772_100001.m3u8",
+		   "live_url" : "rtmp://liveplay.warmcoding.com/live/${curlive.curliveInfor.streamid}",
+		   "live_url2" : "http://liveplay.warmcoding.com/live/${curlive.curliveInfor.streamid}.flv",
+		   "live_url3": "http://liveplay.warmcoding.com/live/${curlive.curliveInfor.streamid}.m3u8",
 		   "width" : 540,
 		   "height" : 360
 };

@@ -29,6 +29,7 @@ public class CurLiveDaoIml extends warmConnect implements CurLiveDao{
 				curlive.setCurrentLiveClass(rs.getString("currentLiveClass"));
 				curlive.setCurrentLiveRtmp(rs.getString("currentLiveRtmp"));
 				curlive.setCurrentLiveSecretKey(rs.getString("currentLiveSecretKey"));
+				curlive.setStreamid(rs.getString("streamid"));
 			}
 			System.out.println("查询完毕...."+curlive.getCurrentLiveClass()+curlive.getCurrentLiveHomeNumber()+curlive.getCurrentLiveRtmp()+curlive.getCurrentLiveSecretKey()+curlive.getCurrentLiveTitle());		
 		} catch (SQLException e) {
@@ -55,7 +56,7 @@ public class CurLiveDaoIml extends warmConnect implements CurLiveDao{
 			//ResultSetMetaData md = rs.getMetaData(); //获得结果集结构信息,元数据
 			//int columnCount = md.getColumnCount();   //获得列数 
 			while(rs.next()) {
-				curlivelist.add(new current_live(rs.getString("currentLiveTitle"),rs.getString("currentLiveRtmp"),rs.getString("currentLiveSecretKey"),rs.getString("currentLiveClass"),rs.getInt("currentLiveHomeNumber")));
+				curlivelist.add(new current_live(rs.getString("currentLiveTitle"),rs.getString("currentLiveRtmp"),rs.getString("currentLiveSecretKey"),rs.getString("currentLiveClass"),rs.getInt("currentLiveHomeNumber"),rs.getString("streamid")));
 			}
 			System.out.println("查询完毕....");
 		} catch (SQLException e) {
@@ -104,8 +105,8 @@ public class CurLiveDaoIml extends warmConnect implements CurLiveDao{
 	public boolean setCurLive(current_live curlive) {
 		// TODO Auto-generated method stub
 			try {
-				String sql = "insert into current_live(currentLiveTitle,currentLiveRtmp,currentLiveSecretKey,currentLiveClass,currentLiveHomeNumber) values(?,?,?,?,?);";
-				Object[] params = {curlive.getCurrentLiveTitle(),curlive.getCurrentLiveRtmp(),curlive.getCurrentLiveSecretKey(),curlive.getCurrentLiveClass(),curlive.getCurrentLiveHomeNumber()};
+				String sql = "insert into current_live(currentLiveTitle,currentLiveRtmp,currentLiveSecretKey,currentLiveClass,currentLiveHomeNumber,streamid) values(?,?,?,?,?,?);";
+				Object[] params = {curlive.getCurrentLiveTitle(),curlive.getCurrentLiveRtmp(),curlive.getCurrentLiveSecretKey(),curlive.getCurrentLiveClass(),curlive.getCurrentLiveHomeNumber(),curlive.getStreamid()};
 				System.out.println("准备向数据库中插入直播");
 				int i = this.executeUpdate(sql, params);
 				if(i>0) {

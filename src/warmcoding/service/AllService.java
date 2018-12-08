@@ -43,9 +43,11 @@ public class AllService {
 		TuiLiu tuiliu = new TuiLiu(homeNumber);
 		String rtmp = tuiliu.getRtmp();
 		String secretKey = tuiliu.getSecretKey();
+		String streamid = tuiliu.getStreamId();
 		curlive.setCurrentLiveHomeNumber(homeNumber);
 		curlive.setCurrentLiveRtmp(rtmp);
 		curlive.setCurrentLiveSecretKey(secretKey);
+		curlive.setStreamid(streamid);
         System.out.println("TUILIU完毕...."+curlive.getCurrentLiveClass()+curlive.getCurrentLiveHomeNumber()+curlive.getCurrentLiveRtmp()+curlive.getCurrentLiveSecretKey()+curlive.getCurrentLiveTitle());
 		
 		CurLiveDaoIml curlivedaoiml = new CurLiveDaoIml();

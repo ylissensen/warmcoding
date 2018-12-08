@@ -61,7 +61,7 @@ public class ApplyHomeDaoIml extends warmConnect implements ApplyHomeDao{
 	@Override
 	public int addHome(String userName) {
 		// TODO Auto-generated method stub
-		int homeNum = 100000+getAllHome();
+		int homeNum = 100001+getAllHome();
 			try {
 				String sql = "insert into live_home(liveHomeUserName,liveHomeNumber,liveHomeStatus) values(?,?,?);";
 				Object[] params = {userName,homeNum,"close"};
