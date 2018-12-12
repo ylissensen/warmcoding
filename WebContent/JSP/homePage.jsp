@@ -14,7 +14,6 @@
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/CSS/layer/mobile/need/layer.css">
-
 <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -34,7 +33,7 @@ $(function test(){
         success:function(json){
        	   // alert("hhhhhhhhhhhh");
        	    var tem = " ";
-       	    if(json.length > 3) json.length -= 3;
+       	 if(json.length > 3) json.length = 3;
        	 for(var i=0,l=json.length;i<l;i++){
                  tem+="<div class='col-md-3'><figure>";
                  tem+="<a href='${pageContext.request.contextPath}/showCurLiveServlet?homeid="+json[i].currentLiveHomeNumber+"'>";
@@ -52,7 +51,7 @@ $(function test(){
          }
  }); 
     
-   /*  if(userid != "null" ){
+     if(userid != null ){
 		var tem = "<h3 style='padding:50px;'>欢迎您呀</h3>"+"<p style='padding:30px;'>"+userid+"</p>"+"<div style='padding:50px;'></div>";
 		tem+= "<a href='${pageContext.request.contextPath }/JSP/login.jsp' >如果需要切换账号,请点击</a>";
 		$("#logindiv").html(tem);
@@ -65,7 +64,7 @@ $(function test(){
         tem+= "</a></button></span>";
 		$("#logindiv").html(tem);
 		
-	} */
+	} 
 });
 </script>
 </head>
