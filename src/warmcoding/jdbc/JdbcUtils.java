@@ -19,7 +19,7 @@ public class JdbcUtils {
 		url = "jdbc:mysql:///warmcoding?useUnicode=true&characterEncoding=UTF-8";
 		System.out.println(url);
 		user = "root";
-		password = "Ca@789520";
+		password = "123456";
 		try {
 			Class.forName(driver);
 		} catch (ClassNotFoundException e) {
