@@ -33,49 +33,29 @@
  <script>
  function applyButton(){
 		$.ajax({
- 		type:"get",
- 		url:"${pageContext.request.contextPath}/applyHomeServlet",
- 		data: {},	
- 		dataType:"json",
- 	    success:function(data){ 
- 	      var homeNumber = data.homeNumber;
- 	      if (homeNumber==-1){
- 	    	  layer.open({
-	    	   			type: 1,
-	    	   			title:false,
-	    	   			closeBtn: 0,
-	    	   			area: ['500px', '200px'],
-	    	   			shadeClose: true, //点击遮罩关闭
-	    	   			content: '\<\div style="font-size:18px; padding:85px; background-color:#ebf6f7;">不好意思 申请失败了呢! 可能是网络问题哦~ \<\/div>'
-	    	   			});
- 	       }else{
- 	    	   var sapply = "你申请的房间号是:"+homeNumber;
- 	    	  // alert(sapply);
- 	    	   layer.open({
- 	   			type: 1,
- 	   			title:false,
- 	   			closeBtn: 0,
- 	   			area: ['500px', '250px'],
- 	   			shadeClose: true, //点击遮罩关闭
- 	   			
-                 btn:['现在直播','暂不直播'],
-                 btn1:function(index,layero){
-                 	window.location.href="${pageContext.request.contextPath }/JSP/applyLive.jsp";
-                 },
-                 btn2:function(index,layero){
-              
-                 },
- 	   			content: '\<\div style="font-size:18px; padding:85px; background-color:#ebf6f7;">恭喜！你已经成为一名光荣的主播！<br/>'+sapply+'<br/>\<\/div>'
- 	   			});
- 	    	    
- 	       } 
- 	    
- 	    }, error: function (data) {
- 	    	alert("error");
-         }
- 	});
+			  type:"get",
+			  url:"${pageContext.request.contextPath}/applyLiveServlet",
+			  data:{title:$("#title").val(),liveclass:$('#liveclass').val()},
+			  dataType:"json",
+			  success:function(data){
+				  layer.open({
+	  	   			type: 1,
+	  	   			title:false,
+	  	   			closeBtn: 0,
+	  	   			area: ['500px', '250px'],
+	  	   			shadeClose: true, //点击遮罩关闭
+	  	   			content: '\<\div style="font-size:18px; padding:85px; background-color:#ebf6f7;">将rtmp和密匙放入到您推流的软件中即可直播!~ \<\/div>'
+	  	   			});
+				  var htmlstring = '\<\div style="font-size:18px; padding:40px;">您的rtmp: '+data[0]+'\<\/div>'+'\<\div style="font-size:18px; padding:40px;"> 您的密匙'+data[1]+'\<\/div>';
+				  var divshow = $("#show");
+				  divshow.append(htmlstring);
+	 	      },error: function (XMLHttpRequest, textStatus, errorThrown) {  
+	             alert(XMLHttpRequest.status);
+	             alert(XMLHttpRequest.readyState);
+	             alert(textStatus);
+	          }
+		});
 	}
- 
  </script>
  <script>
  var code;
@@ -161,8 +141,8 @@
 							<li class="dropdown">
 								
 							</li>
-							<li><a href="#">Login</a></li>
-							<li><a href="#">Register</a></li>
+							<li><a href="${pageContext.request.contextPath }/JSP/login.jsp">Login</a></li>
+							<li><a href="${pageContext.request.contextPath }/JSP/register.jsp">Register</a></li>
 						</ul>
 					</div>
 				</div>
@@ -248,7 +228,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<div class="text-center mb-1 section-pretitle">申请成为主播</div>
+						<div class="text-center mb-1 section-pretitle">申请本次直播</div>
 						<div class="organik-seperator mb-9 center">
 							<span class="sep-holder"><span class="sep-line"></span></span>
 							<div class="sep-icon"><i class="organik-flower"></i></div>
@@ -262,17 +242,25 @@
                      
                              <div class="row">
 								<div class="col-md-12">
-									<label>姓名 <span class="required">*</span></label>
+									<label>本次直播的标题 <span class="required">*</span></label>
 									<div class="form-wrap">
-										<input type="text" name="your-address" value="" size="40" />
+										<input type="text" class="form-control" id="title" placeholder="#本次直播的标题#"/>
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-12">
-									<label>身份证 <span class="required">*</span></label>
+									<label>本次直播的分类 <span class="required">*</span></label>
 									<div class="form-wrap">
-										<input type="text" name="your-postal" value="" size="40" />
+										<select  id="liveclass">
+											<option value="">C++</option>
+											<option value="">C</option>
+											<option value="">C#</option>
+											<option value="">JAVA</option>
+											<option value="">JavaScript</option>
+											<option value="">HTML</option>
+											<option value="">Python</option>
+										</select>
 									</div>
 								</div>
 							</div>
@@ -297,22 +285,9 @@
 	                    </div>
 	                    </div>
 	                    <div class="row">
-	                        <div class="col-md-4 col-sm-12">
+	                    <div class="col-md-4 col-sm-12">
                         <h4 style="padding:40px;">注意事项</h4>
-						<div class="icon-boxes right">
-							<div class="icon-boxes-icon"><i class="ion-android-star-outline"></i></div>
-							<div class="icon-boxes-inner">
-								
-								<p>1. 本功能目前属于开发测试阶段,申请填写表格较为简单,后续可能需要补充上传多项证件哦</p>
-							</div>
-						</div>
-						<div class="icon-boxes right">
-							<div class="icon-boxes-icon"><i class="organik-cucumber"></i></div>
-							<div class="icon-boxes-inner">
-								
-								<p> 2. 对直播流程有问题可以拨打电话 15071091360 咨询美女客服</p>
-							</div>
-						</div>
+						<div id="show"></div>
 					</div>
 	                    </div>
 					</div>

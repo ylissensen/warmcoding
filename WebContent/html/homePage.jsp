@@ -110,8 +110,8 @@ $(function test(){
                                 <ul class="sub-menu">
 								</ul>
 							</li>
-							<li><a href="login.jsp">Login</a></li>
-							<li><a href="register.jsp">Register</a></li>
+							<li><a href="${pageContext.request.contextPath }/JSP/login.jsp">Login</a></li>
+							<li><a href="${pageContext.request.contextPath }/JSP/register.jsp">Register</a></li>
 						</ul>
 					</div>
 				</div>

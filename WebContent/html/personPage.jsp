@@ -63,8 +63,8 @@
 							<li class="dropdown">
 							
 							</li>
-							<li><a href="#">Login</a></li>
-							<li><a href="#">Register</a></li>
+							<li><a href="${pageContext.request.contextPath }/JSP/login.jsp">Login</a></li>
+							<li><a href="${pageContext.request.contextPath }/JSP/register.jsp">Register</a></li>
 						</ul>
 					</div>
 				</div>
