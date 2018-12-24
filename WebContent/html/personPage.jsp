@@ -233,10 +233,10 @@
   		  dataType:"json",
   		  success:function(data){
   			  if(data.data==0){
-  				  var html = "<h4 style='padding:40px;'>您还不是主播呢~<br/><a href='${pageContext.request.contextPath }/JSP/applyHome.jsp'>点击此处一键</a>开启你的直播间</p>";
+  				  var html = "<h4 style='padding:40px;'>您还不是主播呢~<br/><a href='${pageContext.request.contextPath }/html/applyHome.jsp'>点击此处一键</a>开启你的直播间</p>";
   				  $("#homeinfor").html(html);
   			  }else{
-  				var html = "<h4 style='padding:40px;'>您是不是要开启本次直播呢~<br/><a href='${pageContext.request.contextPath }/JSP/applyLive.jsp'>点击此处一键</a>开启你的本次直播</p>";
+  				var html = "<h4 style='padding:40px;'>您是不是要开启本次直播呢~<br/><a href='${pageContext.request.contextPath }/html/applyLive.jsp'>点击此处一键</a>开启你的本次直播</p>";
   				 $("#homeinfor").html(html);
   			  }
    	      },error: function (XMLHttpRequest, textStatus, errorThrown) {  

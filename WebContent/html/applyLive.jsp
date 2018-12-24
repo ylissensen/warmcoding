@@ -46,9 +46,12 @@
 	  	   			shadeClose: true, //点击遮罩关闭
 	  	   			content: '\<\div style="font-size:18px; padding:85px; background-color:#ebf6f7;">将rtmp和密匙放入到您推流的软件中即可直播!~ \<\/div>'
 	  	   			});
-				  var htmlstring = '\<\div style="font-size:18px; padding:40px;">您的rtmp: '+data[0]+'\<\/div>'+'\<\div style="font-size:18px; padding:40px;"> 您的密匙'+data[1]+'\<\/div>';
-				  var divshow = $("#show");
-				  divshow.append(htmlstring);
+				  var htmlstring1 = '\<\div style="font-size:18px; padding:40px;">'+data[0]+'\<\/div>';
+				  var htmlstring2 = '\<\div style="font-size:18px; padding:40px;">'+data[1]+'\<\/div>';
+				  var divshow1 = $("#show1");
+				  var divshow2 = $("#show2");
+				  divshow1.append(htmlstring1);
+				  divshow2.append(htmlstring2);
 	 	      },error: function (XMLHttpRequest, textStatus, errorThrown) {  
 	             alert(XMLHttpRequest.status);
 	             alert(XMLHttpRequest.readyState);
@@ -253,13 +256,13 @@
 									<label>本次直播的分类 <span class="required">*</span></label>
 									<div class="form-wrap">
 										<select  id="liveclass">
-											<option value="">C++</option>
-											<option value="">C</option>
-											<option value="">C#</option>
-											<option value="">JAVA</option>
-											<option value="">JavaScript</option>
-											<option value="">HTML</option>
-											<option value="">Python</option>
+											<option value="C++">C++</option>
+											<option value="C">C</option>
+											<option value="C#">C#</option>
+											<option value="Java">JAVA</option>
+											<option value="JavaScript">JavaScript</option>
+											<option value="HTML">HTML</option>
+											<option value="Python">Python</option>
 										</select>
 									</div>
 								</div>
@@ -286,8 +289,11 @@
 	                    </div>
 	                    <div class="row">
 	                    <div class="col-md-4 col-sm-12">
-                        <h4 style="padding:40px;">注意事项</h4>
-						<div id="show"></div>
+                        <h4 style="padding:40px;">rtmp和密匙</h4>
+                        <p>你的rtmp</p>
+						<div id="show1"></div>
+						<p>你的密匙</p>
+						<div id="show2"></div>
 					</div>
 	                    </div>
 					</div>

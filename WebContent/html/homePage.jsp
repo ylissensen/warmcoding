@@ -65,20 +65,11 @@ $(function test(){
             alert(textStatus);
          }
  }); 
-    
-     if(userid != null ){
-		
-	}else{
-		
-	} 
 });
 </script>
 
 </head>
 <body>
-
- 
-
 
 <div class="noo-spinner">
 	<div class="spinner">
@@ -111,7 +102,8 @@ $(function test(){
 								</ul>
 							</li>
 							<li><a href="${pageContext.request.contextPath }/JSP/login.jsp">Login</a></li>
-							<li><a href="${pageContext.request.contextPath }/JSP/register.jsp">Register</a></li>
+		                    <li><a href="${pageContext.request.contextPath }/JSP/register.jsp">Register</a></li>
+						
 						</ul>
 					</div>
 				</div>
@@ -172,7 +164,7 @@ $(function test(){
 				<div class="col-xs-8">
 					<div class="header-center">
 						<a href="#" id="logo-2">
-							<img class="logo-image" src="images/logo.png" alt="Organik Logo" />
+							<img class="logo-image" src="images/logo.png" alt="Logo" />
 						</a>
 					</div>
 				</div>
@@ -236,7 +228,7 @@ $(function test(){
 										 data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power0.easeIn","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(95,189,116);bg:rgba(51, 51, 51, 0);"}]'
 										 data-textAlign="['inherit','inherit','inherit','inherit']"
 										 data-paddingtop="[16,16,16,16]" data-paddingright="[30,30,30,30]"
-										 data-paddingbottom="[16,16,16,16]" data-paddingleft="[30,30,30,30]">Shop Now
+										 data-paddingbottom="[16,16,16,16]" data-paddingleft="[30,30,30,30]">Live Now
 									</a>
 								</li>
 								<li data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-rotate="0" data-saveperformance="off" data-title="Slide"> 

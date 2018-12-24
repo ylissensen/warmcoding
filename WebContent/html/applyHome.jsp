@@ -60,7 +60,7 @@
  	   			
                  btn:['现在直播','暂不直播'],
                  btn1:function(index,layero){
-                 	window.location.href="${pageContext.request.contextPath }/JSP/applyLive.jsp";
+                 	window.location.href="${pageContext.request.contextPath }/html/applyLive.jsp";
                  },
                  btn2:function(index,layero){
               
@@ -185,7 +185,7 @@
 			<div class="row">
 				<div class="col-md-3">
 					<a href="#" id="logo">
-						<img class="logo-image" src="images/logo.png" alt="Organik Logo" />
+						<img class="logo-image" src="images/logo.png" alt="Logo" />
 					</a>
 				</div>
 				<div class="col-md-9">

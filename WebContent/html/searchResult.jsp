@@ -201,7 +201,7 @@
 			<div class="row">
 				<div class="col-md-3">
 					<a href="#" id="logo">
-						<img class="logo-image" src="images/logo.png" alt="Organik Logo" />
+						<img class="logo-image" src="${pageContext.request.contextPath }/html/images/logo.png" alt="Organik Logo" />
 					</a>
 				</div>
 				<div class="col-md-9">
@@ -318,7 +318,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-5">
-					<img src="images/footer_logo.png" class="footer-logo" alt="" />
+					<img src="${pageContext.request.contextPath }/html/images/footer_logo.png" class="footer-logo" alt="" />
 						<p>欢迎你来到 温暖码农 直播平台.</p>
 					    <p>让我们一起在这里成长. 探索学习和编程的乐趣</p>
 				</div>		

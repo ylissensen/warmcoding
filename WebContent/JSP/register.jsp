@@ -286,7 +286,7 @@
 		    	   			shadeClose: true, //点击遮罩关闭
 		    	   			content: '\<\div style="font-size:18px; padding:85px; background-color:#ebf6f7;">login success \<\/div>'
 		    	   			}); */
-	    	    	  window.location.href = "${pageContext.request.contextPath}/JSP/login.jsp";
+	    	    	  window.location.href = "${pageContext.request.contextPath}/html/login.jsp";
 	    	       }else if(info == -1){
 	    	    	   layer.open({
 		    	   			type: 1,
