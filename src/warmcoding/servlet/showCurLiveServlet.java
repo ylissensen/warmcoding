@@ -43,7 +43,7 @@ public class showCurLiveServlet extends HttpServlet {
 		
 		request.setAttribute("curlive", homeInfor);//将信息存储在流对象中
 		System.out.println(homeInfor.getCurliveInfor().getCurrentLiveRtmp());
-		request.getRequestDispatcher("JSP/showCurLive.jsp").forward(request, response);//重定向到播放页面之中
+		request.getRequestDispatcher("html/showCurLive.jsp").forward(request, response);//重定向到播放页面之中
 		
 		
 	}

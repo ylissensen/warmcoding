@@ -37,7 +37,7 @@ $(function test(){
        	 for(var i=0,l=json.length;i<l;i++){
                  tem+="<div class='col-md-3'><figure>";
                  tem+="<a href='${pageContext.request.contextPath}/showCurLiveServlet?homeid="+json[i].currentLiveHomeNumber+"'>";
-                 tem+=" <img src='${pageContext.request.contextPath}/CSS/images/"+(i%14+1)+".jpg' style='padding:10px' height='300px' width='250px'>";
+                 tem+=" <img src='${pageContext.request.contextPath}/CSS/images/"+(i%10+1)+".jpg' style='padding:10px' height='300px' width='250px'>";
                  tem+="</a>"+"</figure>";
                  tem+=" <p style='padding:20px;'> 标题:"+json[i].currentLiveTitle+"<br/>分类:"+json[i].currentLiveClass+"<br/>房间号:"+json[i].currentLiveHomeNumber+"<br/>";
                  tem+="</p></div>";  

@@ -72,7 +72,7 @@
              %>
                     <script type="text/javascript">
                          $(function(){
-                        	  var titlehtml = "<div class='col-md-3'><figure><a href='${pageContext.request.contextPath}/showCurLiveServlet?homeid="+"<%=titlelist.get(i).getCurrentLiveHomeNumber()%>"+"'>"+"<img src='${pageContext.request.contextPath}/CSS/images/"+"<%=i %14+1 %>"+".jpg' style='padding:10px' height='300px' width='250px'>";
+                        	  var titlehtml = "<div class='col-md-3'><figure><a href='${pageContext.request.contextPath}/showCurLiveServlet?homeid="+"<%=titlelist.get(i).getCurrentLiveHomeNumber()%>"+"'>"+"<img src='${pageContext.request.contextPath}/CSS/images/"+"<%=i %10+1 %>"+".jpg' style='padding:10px' height='300px' width='250px'>";
                               titlehtml+="</a></figure><p style='padding:20px;'>";
                               titlehtml+="房间号："+ "<%=titlelist.get(i).getCurrentLiveHomeNumber() %> "+"<br/>";
                               titlehtml+="标题："+ "<%=titlelist.get(i).getCurrentLiveTitle() %> "+"<br/>";
@@ -104,7 +104,7 @@
              %>
                     <script type="text/javascript">
                          $(function(){
-                        	  var classhtml = "<div class='col-md-3'><figure><a href='${pageContext.request.contextPath}/showCurLiveServlet?homeid="+"<%=classlist.get(j).getCurrentLiveHomeNumber()%>"+"'>"+"<img src='${pageContext.request.contextPath}/CSS/images/"+"<%=j %14+1 %>"+".jpg' style='padding:10px' height='300px' width='250px'>";
+                        	  var classhtml = "<div class='col-md-3'><figure><a href='${pageContext.request.contextPath}/showCurLiveServlet?homeid="+"<%=classlist.get(j).getCurrentLiveHomeNumber()%>"+"'>"+"<img src='${pageContext.request.contextPath}/CSS/images/"+"<%=j %10+1 %>"+".jpg' style='padding:10px' height='300px' width='250px'>";
                               classhtml+="</a></figure><p style='padding:20px;'>";
                               classhtml+="房间号："+ "<%=classlist.get(j).getCurrentLiveHomeNumber() %> "+"<br/>";
                               classhtml+="标题："+ "<%=classlist.get(j).getCurrentLiveTitle() %> "+"<br/>";
