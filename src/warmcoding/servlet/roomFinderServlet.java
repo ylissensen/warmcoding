@@ -90,7 +90,7 @@ public class roomFinderServlet extends HttpServlet {
 	        
 	        
 	        // response.sendRedirect(request.getContextPath()+"/JSP/searchResult.jsp");  
-	        request.getRequestDispatcher("/html/searchResult.jsp").forward(request, response);//重定向到播放页面之中
+	        request.getRequestDispatcher("/JSP/searchResult.jsp").forward(request, response);//重定向到播放页面之中
 
 	    
 	}

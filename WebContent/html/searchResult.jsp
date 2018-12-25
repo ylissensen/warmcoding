@@ -293,7 +293,7 @@
 							<div class="sep-icon"><i class="organik-flower"></i></div>
 							<span class="sep-holder"><span class="sep-line"></span></span>
 						</div>
-						<div id="title_result"></div>
+						<div id="class_result"></div>
 					</div>
 				</div>	
 			</div>
@@ -308,7 +308,7 @@
 							<div class="sep-icon"><i class="organik-flower"></i></div>
 							<span class="sep-holder"><span class="sep-line"></span></span>
 						</div>
-						<div id="class_result"></div>
+						<div id="title_result"></div>
 					</div>
 				</div>	
 			</div>
