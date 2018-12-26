@@ -53,10 +53,14 @@ public class roomFinderServlet extends HttpServlet {
 	        List<current_live> title = new ArrayList<>();
 	        List<current_live> clazz = new ArrayList<>();
 	        if (!isNumeric(keyword)){
-	            resultlist = RDS.RoomFindList(keyword);
+	            resultlist = RDS.RoomFindList(keyword); //所有的房间
+//	            for(int i=0;i<resultlist.size();i++) {
+//		        	System.out.println(resultlist.get(i).getCurrentLiveHomeNumber());
+//		        }
 	            for (int i = 0;i<resultlist.size();i++){
+	            	System.out.println("size=="+resultlist.size());
 	                title.add(resultlist.remove(0));
-	                if (resultlist.get(i).getCurrentLiveHomeNumber()==-1){
+	                if (resultlist.get(0).getCurrentLiveHomeNumber()==-1){
 	                    resultlist.remove(0);
 	                    break;
 	                }
@@ -66,6 +70,15 @@ public class roomFinderServlet extends HttpServlet {
 	        if(isNumeric(keyword)){
 	            result = RDS.RoomFindById(Integer.parseInt(keyword));
 	        }
+//	        System.out.println("title number"+title.size());
+//	        System.out.println("class number"+clazz.size());
+//	        for(int i=0;i<title.size();i++) {
+//	        	System.out.println(title.get(i).getCurrentLiveHomeNumber());
+//	        }
+//	        for(int i=0;i<clazz.size();i++) {
+//	        	System.out.println(clazz.get(i).getCurrentLiveHomeNumber());
+//	        }
+	        System.out.println(result.getCurrentLiveHomeNumber()+"result...........");
 	        net.sf.json.JSONObject object = new net.sf.json.JSONObject();
 	        object.put("title",net.sf.json.JSONArray.fromObject(title));
 	        object.put("class",net.sf.json.JSONArray.fromObject(clazz));
@@ -90,7 +103,7 @@ public class roomFinderServlet extends HttpServlet {
 	        
 	        
 	        // response.sendRedirect(request.getContextPath()+"/JSP/searchResult.jsp");  
-	        request.getRequestDispatcher("/JSP/searchResult.jsp").forward(request, response);//重定向到播放页面之中
+	        request.getRequestDispatcher("/html/searchResult.jsp").forward(request, response);//重定向到播放页面之中
 
 	    
 	}

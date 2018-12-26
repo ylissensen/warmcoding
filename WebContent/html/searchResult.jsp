@@ -33,8 +33,9 @@
      List<current_live> titlelist = (List<current_live>)request.getAttribute("title");
      List<current_live> classlist = (List<current_live>)request.getAttribute("class");
      current_live idlist = (current_live)request.getAttribute("id");
+     
      //循环输出title的
-     %>
+%>
      
     
  <%   
@@ -127,7 +128,7 @@
              %>
                     <script type="text/javascript">
                          $(function(){
-                        	 
+                        	 var tem = "";
                         	 tem+="<div class='col-md-4 col-sm-6 product-item text-center mb-3'><div class='product-thumb'>";
                     		 tem+="<a href='${pageContext.request.contextPath}/showCurLiveServlet?homeid="+"<%=idlist.getCurrentLiveHomeNumber()%>"+"'>";
                              tem+=" <img src='${pageContext.request.contextPath}/CSS/images/"+8+".jpg' style='padding:10px' height='300px' width='250px'>";
